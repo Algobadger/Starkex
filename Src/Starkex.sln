@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starkex", "Starkex\Starkex.csproj", "{BAA8F475-B5E3-4ACD-9CFA-893A5964483D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starkex.Test", "Starkex.Test\Starkex.Test.csproj", "{BE8026D9-B62E-4CEC-A171-40800B0DAA2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAA8F475-B5E3-4ACD-9CFA-893A5964483D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAA8F475-B5E3-4ACD-9CFA-893A5964483D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAA8F475-B5E3-4ACD-9CFA-893A5964483D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAA8F475-B5E3-4ACD-9CFA-893A5964483D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE8026D9-B62E-4CEC-A171-40800B0DAA2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE8026D9-B62E-4CEC-A171-40800B0DAA2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE8026D9-B62E-4CEC-A171-40800B0DAA2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE8026D9-B62E-4CEC-A171-40800B0DAA2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D68DE8E-AA9F-464C-8027-DD7DEC3F8D1E}
+	EndGlobalSection
+EndGlobal
