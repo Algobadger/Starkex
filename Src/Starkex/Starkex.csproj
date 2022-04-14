@@ -5,7 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Authors>Shadman Sakib, Anders Tvelin</Authors>
-    <Description>C# implementation of the starkex library. Includes PedersonHash hashing and EC Signatures</Description>
+    <Description>C# implementation of the starkex library. Includes PedersonHash hashing and EC Signatures.
+Implements dydx starkKey derivation and default api key. </Description>
     <Copyright>Algobee</Copyright>
     <PackageProjectUrl>https://github.com/Algobadger/Starkex</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -14,6 +15,9 @@
     <PackageTags>Starkex, DyDx</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
 	<Title>Starkex</Title>
+	<NeutralLanguage>en</NeutralLanguage>
+	<AssemblyVersion>1.0.1.0</AssemblyVersion>
+	  <VersionPrefix>1.0.1.0</VersionPrefix>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,7 +34,7 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
+    <PackageReference Include="Nethereum.Signer" Version="4.3.0" />
   </ItemGroup>
 
 </Project>
