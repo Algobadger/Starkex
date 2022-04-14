@@ -24,11 +24,16 @@ namespace Starkex.Signatures
         private readonly StarkHashCalculator STARK_HASH_CALCULATOR = new(new PedersonHash(ConstantPoints.GetECPoint(0)));
         private readonly EcSigner EC_SIGNER = new(StarkCurve.GetInstance());
 
-        public Signature Sign(OrderWithClientId order, NetworkId networkId, BigInteger privateKey)
+        public Signature Sign(OrderWithClientId order, NetworkId networkId, string privateKey)
         {
+            if (privateKey.StartsWith("0x") || privateKey.StartsWith("0X"))
+            {
+                privateKey = privateKey.Substring(2);
+            }
+            var key = new BigInteger(privateKey,16);
             var starkOrder = StarkwareOrderConverter.FromOrderWithClientId(order, networkId);
             var hash = STARK_HASH_CALCULATOR.CalculateHash(starkOrder);
-            return EC_SIGNER.Sign(privateKey, hash);
+            return EC_SIGNER.Sign(key, hash);
         }
 
         public string DeriveStarkKey(string ethPrivateKey, int networkId)

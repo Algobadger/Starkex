@@ -18,8 +18,8 @@ namespace Starkex.Test
         private static readonly Order order = new("12345", 145.0005, 0.125, ETH, StarkwareOrderSide.BUY, Time);
         private static readonly OrderWithClientId orderWithClientID = new OrderWithClientIdWithPrice(order,
                 "This is an ID that the client came up with to describe this order", 350.00067);
-        private readonly BigInteger PRIVATE_KEY = new("07230d8f6fcba9afb8eea3aa67119b5a1bc117500186c384b5aaee85dafbb64c", 16);
-        private readonly string privateKey = "58c7d5a90b1776bde86ebac077e053ed85b0f7164f53b080304a531947f46e3";
+        private readonly string PRIVATE_KEY = "07230d8f6fcba9afb8eea3aa67119b5a1bc117500186c384b5aaee85dafbb64c";
+        private readonly string privateKey = "0x58c7d5a90b1776bde86ebac077e053ed85b0f7164f53b080304a531947f46e3";
         private readonly string mockSignature = "00cecbe513ecdbf782cd02b2a5efb03e58d5f63d15f2b840e9bc0029af04e8dd0090b822b16f50b2120e4ea9852b340f7936ff6069d02acca02f2ed03029ace5";
 
         [TestMethod]
@@ -56,7 +56,7 @@ namespace Starkex.Test
                     200.0
             );
             StarkSigner starkSigner = new();
-            Signature signature = starkSigner.Sign(order, NetworkId.MAINNET, new BigInteger("515282606d04ca75bfda0b2f3f92f9ad591f0153ff79ccac99f0a61016a4c5", 16));
+            Signature signature = starkSigner.Sign(order, NetworkId.MAINNET, "515282606d04ca75bfda0b2f3f92f9ad591f0153ff79ccac99f0a61016a4c5");
             Assert.AreEqual(sign, signature.ToString());
         }
 
@@ -64,7 +64,7 @@ namespace Starkex.Test
         public void TestSingOrderOddY()
         {
             StarkSigner starkSigner = new();
-            Signature signature = starkSigner.Sign(orderWithClientID, NetworkId.ROPSTEN, new BigInteger(privateKey, 16));
+            Signature signature = starkSigner.Sign(orderWithClientID, NetworkId.ROPSTEN, privateKey);
             Assert.AreEqual(mockSignature, signature.ToString());
         }
 
@@ -73,7 +73,7 @@ namespace Starkex.Test
         {
             string sign = "00fc0756522d78bef51f70e3981dc4d1e82273f59cdac6bc31c5776baabae6ec0158963bfd45d88a99fb2d6d72c9bbcf90b24c3c0ef2394ad8d05f9d3983443a";
             StarkSigner starkSigner = new();
-            Signature signature = starkSigner.Sign(orderWithClientID, NetworkId.ROPSTEN, new BigInteger("65b7bb244e019b45a521ef990fb8a002f76695d1fc6c1e31911680f2ed78b84", 16));
+            Signature signature = starkSigner.Sign(orderWithClientID, NetworkId.ROPSTEN, "65b7bb244e019b45a521ef990fb8a002f76695d1fc6c1e31911680f2ed78b84");
             Assert.AreEqual(sign, signature.ToString());
         }
 
@@ -83,7 +83,7 @@ namespace Starkex.Test
             OrderWithClientId orderWithClientID = new OrderWithClientIdAndQuoteAmount(order,
                     "This is an ID that the client came up with to describe this order", 50750.272151);
             StarkSigner starkSigner = new();
-            Signature signature = starkSigner.Sign(orderWithClientID, NetworkId.ROPSTEN, new BigInteger(privateKey, 16));
+            Signature signature = starkSigner.Sign(orderWithClientID, NetworkId.ROPSTEN, privateKey);
             Assert.AreEqual(mockSignature, signature.ToString());
         }
 
