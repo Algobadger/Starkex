@@ -16,5 +16,17 @@ namespace Starkex.Models
             AssetId = assetId;
             Resolution = resolution;
         }
+
+        public DydxAsset(string value, string assetId, string resolution)
+        {
+            Value = value;
+            if (assetId.StartsWith("0x"))
+            {
+                assetId = assetId[2..];
+            }
+            AssetId = new BigInteger(assetId,16);
+            int.TryParse(resolution, out int res);
+            Resolution = (int)Math.Log10(res);
+        }
     }
 }
