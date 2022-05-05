@@ -16,8 +16,8 @@ Implements dydx starkKey derivation and default api key. </Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
 	<Title>Starkex</Title>
 	<NeutralLanguage>en</NeutralLanguage>
-	<AssemblyVersion>1.0.1.1</AssemblyVersion>
-	  <VersionPrefix>1.0.1.1</VersionPrefix>
+	<AssemblyVersion>1.0.1.2</AssemblyVersion>
+	  <VersionPrefix>1.0.1.2</VersionPrefix>
   </PropertyGroup>
 
   <ItemGroup>
@@ -34,7 +34,7 @@ Implements dydx starkKey derivation and default api key. </Description>
 	</ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Nethereum.Signer" Version="4.3.0" />
+    <PackageReference Include="Nethereum.Signer" Version="4.4.1" />
   </ItemGroup>
 
 </Project>
