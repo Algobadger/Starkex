@@ -10,7 +10,7 @@ namespace Starkex.Test
     [TestClass]
     public class TestStarkHashCalculator
     {
-        private readonly static string HASH_VALUE = "1690222932b6b9f7ec1a92f3950e5332892789e7531336114f588ed08de3a42";
+        private readonly static string HASH_VALUE = "2ba8fb745b371a256f6930c71e82ce08aadf7e1fc78ba70a1cab7af1cce78c3";
         private static readonly DateTime Time = DateTime.Parse("2021-09-20T00:00:00.000Z").ToUniversalTime();
         private static readonly DydxAsset ATOM = new("ATOM", new BigInteger("41544f4d2d37000000000000000000", 16), 7);
         private static readonly DydxAsset ETH = new("ETH", new BigInteger("4554482d3900000000000000000000", 16), 9);
@@ -22,8 +22,9 @@ namespace Starkex.Test
         [TestMethod]
         public void TestHashWithPrice()
         {
-            StarkwareOrder starkwareOrder = StarkwareOrderConverter.FromOrderWithClientId(order, NetworkId.ROPSTEN);
-            Assert.AreEqual(HASH_VALUE, STARK_HASH_CALCULATOR.CalculateHash(starkwareOrder).ToString(16));
+            StarkwareOrder starkwareOrder = StarkwareOrderConverter.FromOrderWithClientId(order, NetworkId.GOERLI);
+            var hash = STARK_HASH_CALCULATOR.CalculateHash(starkwareOrder).ToString(16);
+            Assert.AreEqual(HASH_VALUE, hash);
         }
 
         [TestMethod]
@@ -40,7 +41,7 @@ namespace Starkex.Test
                     34.00
             );
 
-            StarkwareOrder starkwareOrder = StarkwareOrderConverter.FromOrderWithClientId(order, NetworkId.ROPSTEN);
+            StarkwareOrder starkwareOrder = StarkwareOrderConverter.FromOrderWithClientId(order, NetworkId.GOERLI);
             Assert.AreEqual(HASH_VALUE, STARK_HASH_CALCULATOR.CalculateHash(starkwareOrder).ToString(16));
         }
 
@@ -53,12 +54,13 @@ namespace Starkex.Test
         [TestMethod]
         public void TestHashETH()
         {
-            var hash = "54defe3d7784789849556377433b4160f9eecd0ebb450cf3cdc02cb948abf48";
+            var hash = "4ceeb860e17a84bfeab2c7768e51d550f4e6baa760cc3f2f2dd43104aa3e680";
             Order order = new("12345", 145.0005, 0.125, ETH, StarkwareOrderSide.BUY, DateTime.Parse("2020-09-17T04:15:55.028Z").ToUniversalTime());
             OrderWithClientId orderWithClientID = new OrderWithClientIdWithPrice(order,
                     "This is an ID that the client came up with to describe this order", 350.00067);
-            StarkwareOrder starkwareOrder = StarkwareOrderConverter.FromOrderWithClientId(orderWithClientID, NetworkId.ROPSTEN);
-            Assert.AreEqual(hash, STARK_HASH_CALCULATOR.CalculateHash(starkwareOrder).ToString(16));
+            StarkwareOrder starkwareOrder = StarkwareOrderConverter.FromOrderWithClientId(orderWithClientID, NetworkId.GOERLI);
+            var calcHash = STARK_HASH_CALCULATOR.CalculateHash(starkwareOrder).ToString(16);
+            Assert.AreEqual(hash, calcHash);
 
         }
     }

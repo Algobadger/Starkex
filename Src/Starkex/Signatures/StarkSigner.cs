@@ -28,7 +28,7 @@ namespace Starkex.Signatures
         {
             if (privateKey.StartsWith("0x") || privateKey.StartsWith("0X"))
             {
-                privateKey = privateKey.Substring(2);
+                privateKey = privateKey[2..];
             }
             var key = new BigInteger(privateKey,16);
             var starkOrder = StarkwareOrderConverter.FromOrderWithClientId(order, networkId);
