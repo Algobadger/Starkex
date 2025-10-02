@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Authors>Shadman Sakib, Anders Tvelin</Authors>
@@ -11,13 +11,13 @@ Implements dydx starkKey derivation and default api key. </Description>
     <PackageProjectUrl>https://github.com/Algobadger/Starkex</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/Algobadger/Starkex</RepositoryUrl>
-    <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+    <PackageReleaseNotes>Update dotnet reference</PackageReleaseNotes>
     <PackageTags>Starkex, DyDx</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
 	<Title>Starkex</Title>
 	<NeutralLanguage>en</NeutralLanguage>
-	<AssemblyVersion>1.0.1.2</AssemblyVersion>
-	  <VersionPrefix>1.0.1.2</VersionPrefix>
+	<AssemblyVersion>1.0.2.0</AssemblyVersion>
+	  <VersionPrefix>1.0.2.0</VersionPrefix>
   </PropertyGroup>
 
   <ItemGroup>
@@ -34,7 +34,7 @@ Implements dydx starkKey derivation and default api key. </Description>
 	</ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Nethereum.Signer" Version="4.4.1" />
+    <PackageReference Include="Nethereum.Signer" Version="5.0.0" />
   </ItemGroup>
 
 </Project>
